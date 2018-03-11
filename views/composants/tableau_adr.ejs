@@ -1,0 +1,45 @@
+<!-- Permet de récupérer l'ordre -->
+<% let tri;
+if(typeof ordre != 'undefined'){ 
+      tri = ordre 
+    }else{
+      tri = 'asc';
+    }
+%> 
+<!-- Tableau contenant les membres -->
+<div class="conteneur-tableau">
+    <table class="tableau">
+        <tr>
+            <th><%= __('profil') %></th>
+            <th><a href='/trier/prenom/<%= tri %>'><%= __('prenom') %></a></th>
+            <th><a href='/trier/nom/<%= tri %>'><%= __('nom') %></a></th> 
+            <th><a href='/trier/telephone/<%= tri %>'><%= __('telephone') %></a></th>
+            <th><a href='/trier/courriel/<%= tri %>'><%= __('courriel') %></a></th>
+            <th><a href='/trier/id/<%= tri %>'>ID</a></th>
+            <th><%= __('supprimer') %></th>
+            <th><%= __('modifier') %></th>
+        </tr>
+        <tr class="gabarit">
+            <td class="profil"><a href=""><i class="fas fa-user"></i></a></td>
+            <td class="prenom" contenteditable="true"></td>
+            <td class="nom" contenteditable="true"></td>
+            <td class="telephone" contenteditable="true"></td>
+            <td class="courriel" contenteditable="true"></td>
+            <td class="identifiant"></td>
+            <td><a href="#msgAjax" class="supprimer"><i class="fas fa-trash"></i></a></td>
+            <td><a href="#msgAjax" class='sauver'><i class="fas fa-save"></i></a></td>
+        </tr>
+        <% adresses.forEach(elm => {%>
+            <tr>
+                <td><a href="/profil/<%= elm._id %>"><i class="fas fa-user"></i></a></td>
+                <td class="prenom" contenteditable="true"><%= elm.prenom %></td>
+                <td class="nom" contenteditable="true"><%= elm.nom %></td>
+                <td class="telephone" contenteditable="true"><%= elm.telephone %></td>
+                <td class="courriel" contenteditable="true"><%= elm.courriel %></td>
+                <td class="identifiant"><%= elm._id %></td>
+                <td><a href="#msgAjax" class="supprimer"><i class="fas fa-trash"></i></a></td>
+                <td><a href="#msgAjax" class='sauver'><i class="fas fa-save"></i></a></td>
+            </tr>
+        <% }) %>
+    </table>
+</div>

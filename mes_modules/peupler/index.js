@@ -1,58 +1,38 @@
-"use strict";
-
-// Le fichier index.js utilise le module tableaux.js
-
-const tableau = require('./tableaux')
-const util = require('util')
-
-const longTabNom = tableau.nom.length
-const longTabPrenom = tableau.prenom.length
-const longTabDomaine = tableau.domaine.length
-const genere_telephone = ()=> {
-  let sTel = ''
-  for (let k=0 ; k<10 ; k++)
-  {
-    if (k== 3 || k == 6) {sTel += '-'}
-    if (k== 0){
-      sTel += Math.floor(Math.random()*9)+1  
-    }
-    else{
-      sTel += Math.floor(Math.random()*10)
-    }  
-    }
-  return sTel
-  }
-/////////////////////////////////////////////////////////
-/*
-const genere_courriel = () => {
-  let gauche = 
+"use strict"
+const oTableaux = require('./tableaux.js');
+// Peuple une liste de membres aléatoirement.
+const peupler_json = () => {
+    let listeMembres = []
+	for(let i=0 ; i<15; i++) {
+        // Génère un numéro de téléphone complet et réaliste
+        let noTel = "-";
+        for (let j = 0; j < 7; j++) {
+            if(j == 3){
+                noTel += "-";
+            }
+            let unChiffre = genere_NbAleatoire(10);
+            noTel += unChiffre.toString(); 
+        }
+        // Crée le membre
+        let unMembre = {};
+        unMembre.nom = oTableaux.tabNom[genere_NbAleatoire(oTableaux.tabNom.length)];
+        unMembre.prenom = oTableaux.tabPrenom[genere_NbAleatoire(oTableaux.tabPrenom.length)];
+        unMembre.ville = oTableaux.tabVille[genere_NbAleatoire(oTableaux.tabVille.length)];
+        unMembre.telephone  = oTableaux.tabIndicatif[genere_NbAleatoire(oTableaux.tabIndicatif.length)] + noTel;
+        unMembre.courriel = unMembre.nom + "." + unMembre.prenom + "@" + oTableaux.tabDomaine[genere_NbAleatoire(oTableaux.tabDomaine.length)];
+        // Formatage du courriel
+        unMembre.courriel = unMembre.courriel.toLowerCase();
+        unMembre.courriel = unMembre.courriel.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+        unMembre.courriel = unMembre.courriel.replace("-","");
+        // Ajoute le membre dans la liste
+        listeMembres.push(unMembre);
+	}
+	return(listeMembres);
+}
+// Fonction qui génère un nombre aléatoire
+// @param {number} max Chiffre maximum pouvant être généré
+const genere_NbAleatoire = (max) => {
+    return Math.floor(Math.random()*max)
 }
 
-*/
-
-const peupler_json = ()=> {
-
-   let tabMembre = []
-   let nom 
-   let prenom
-   let domaine
-   for (let k=0 ; k <20; k++)
-   {
-     nom = tableau.nom[Math.floor(Math.random()*longTabNom)]
-     prenom = tableau.prenom[Math.floor(Math.random()*longTabPrenom)]
-     domaine =  tableau.domaine[Math.floor(Math.random()*longTabDomaine)]
-     tabMembre[k] =
-     {
-       "nom" :  nom,
-       "prenom" :  prenom,
-       "telephone" : genere_telephone(),
-       "courriel" :  prenom.charAt(0).toLowerCase() + nom.toLowerCase() + '@' + domaine
-     }
-   }
-// console.log(util.inspect(tabMembre))
-  return tabMembre
-}
-
-
-// on exporte la fonction peupler_json
 module.exports = peupler_json;

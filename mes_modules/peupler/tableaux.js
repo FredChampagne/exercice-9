@@ -1,116 +1,67 @@
-/*!
- * tableaux.js
- */
+"use strict";
+// Tableau contenant des noms, prénoms, indicateurs et domaines
+// afin de générer des membres
+let oTableaux = {
+    tabNom : [
+        "Champagne",
+        "Lamardin",
+        "Cloutier",
+        "Roover",
+        "Maisonneuve",
+        "Tessier",
+        "Déry",
+        "Labalé",
+        "Teriot",
+        "Précalia",
+        "Wiston",
+        "Crouteau",
+        "Gesy",
+        "Lortie"
+    ],
+    tabPrenom : [
+        "Frédéric",
+        "Kevin",
+        "Martin",
+        "Alexandre",
+        "Marc-André",
+        "Maurice",
+        "Jessica",
+        "Rebecca",
+        "Natalie",
+        "Natasha",
+        "Benoit",
+        "Danielle",
+        "Maxime",
+        "Sarah"
+    ],
+    tabVille : [
+        "Laval",
+        "Montréal",
+        "Québec",
+        "Saint-Jérôme",
+        "Longueuil",
+        "Terrebonne",
+        "Rivière-du-loup",
+        "Trois-Rivères",
+        "Brossard"
+    ],
+    tabIndicatif : [
+        "514",
+        "450",
+        "819",
+        "418",
+        "438"
+    ],
+    tabDomaine : [
+        "yahoo.com",
+        "msn.com",
+        "hotmail.com",
+        "live.ca",
+        "live.fr",
+        "outlook.com",
+        "gmail.com"
+    ]
 
-'use strict';
-const Tableau = {
-      nom : [ 
-               'Martin',
-               'Marchand',
-               'Trudeau',
-               'Lafontaine',
-               'Gravel',
-               'Huberdeau',
-               'Massé',
-               'St-Pierre',
-               'Dandurand',
-               'Hamel',
-               'Larose',
-               'Ambroise',
-               'Kuvel',
-               'Lamarre',
-               'Sorel',
-               'Frapier',
-               'Archer',
-               'Dejoie',
-               'Moïse',
-               'Fortin',
-               'Stien',
-               'Gagnon',
-               'Chédiac',
-               'Roy',
-               'Gagner',
-               'Larue',
-               'Lafortune',
-               'Roffi',
-               'Cartier',
-               'Maisonneuve',
-               'Levesque',
-               'Talon',
-               'Bellemarre',
-               'Mercier'
-               ],
+}
 
- domaine : [
-                  'hotmail.com',
-                  'vedeotron.com',
-                  'gmail.com',
-                  'yahoo.com',
-                  'cmaisonneuve.qc.ca',
-                  'webfaction.com',
-                  'cvsyc.com',
-                  'bell.ca',
-                  'umontreal.ca',
-                  'skillscanada.ca',
-                  'inforoutefpt.com'],
-
- ville : [
-            'Montréal',
-            'Québec',
-            'Saskatshewan',
-            'Calgary',
-            'Edmonton',
-            'Laval',
-            'Ottawa',
-            'Gatineau',
-            'Gaspé',
-            'Hudson',
-            'New York'
-            ],
-
-   prenom : [
-                  'Luc',
-                  'Éric',
-                  'François',
-                  'Lyne',
-                  'carolle',
-                  'Sylvie',
-                  'Renée',
-                  'Mathieu',
-                  'Eddy',
-                  'Jean',
-                  'Paul',
-                  'Gustave',
-                  'Rose-Lyne',
-                  'Rose-Lise',
-                  'Rose',
-                  'Xavier',
-                  'Olivier',
-                  'Michel',
-                  'Jean-François',
-                  'Bob',
-                  'Gil',
-                  'Martin',
-                  'Pierre',
-                  'Maxime',
-                  'Léo',
-                  'Léo-Paul',
-                  'Paul',
-                  'Alix',
-                  'Alixe',
-                  'Chantal',
-                  'Christelle',
-                  'Katy',
-                  'Johanne',
-                  'Béatrice',
-                  'Noémie',
-                  'Coralie',
-                  'Pénéloppe',
-                  'Charlotte'
-                    ]
-
-            }        
-
-module.exports = Tableau
-
-
+module.exports = oTableaux;

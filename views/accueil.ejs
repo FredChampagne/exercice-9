@@ -1,9 +1,12 @@
-<!DOCTYPE html>
-<html>
-	<%- include('composants/head') %>
-	<%- include('composants/menu') %>
-	<%- include('composants/entete') %>
-	<%- include('composants/accueil') %>
-	<%- include('composants/footer') %>
+<!-- Page d'accueil-->
+<%- include('composants/head') %> 
+<body>
+ <%- include('composants/entete') %>
+ <main id="accueil">
+    <h1><%= __('titreSite') %></h1>
+    <p><%= __('bienvenue') %></p>
+    <a class="bouton" href="/list"><%= __('btnVoirMembres') %></a>
+</main>
+ <%- include('composants/footer') %>
+</body>
 </html>
-

@@ -1,0 +1,36 @@
+<h1><%= __('clavardage') %></h1>
+<section id="enregistrement">
+    <p><%= __('enregChat') %></p>
+    <p id="erreur_enreg">* <%= __('entrerNom') %> *</p>
+    <input type="text">
+    <button onclick="enregistrement()"><%= __('enreg') %></button>
+</section>
+<section id="chat" style="display:none">
+    <div id="log"></div>
+    <table id="list_user">
+        <thead>
+            <tr>
+                <th><%= __('identifiant') %></th>
+                <th><%= __('nomSeul') %></th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Affiche les utilisateurs -->
+        </tbody>
+    </table>
+    <table id="message">
+        <thead>
+            <tr>
+                <th><%= __('utilisateur') %></th>
+                <th><%= __('message') %></th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Affiche les messages -->
+        </tbody>
+    </table>
+    <div id="message_a_transmettre">
+        <textarea id="txtMessage" placeholder="<%= __('votreTexte') %>"></textarea>
+        <button onclick="transmettre()"><%= __('transmettre') %></button>
+    </div>
+</section>
